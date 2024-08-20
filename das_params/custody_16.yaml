@@ -76,7 +76,7 @@ ethereum:
       lcli_executable: bin/lcli
     lighthouse_vc:
       type: lighthouse_vc
-      executable: bin/lighthouse_vc
+      executable: bin/lighthouse
     geth_bootnode:
       type: geth_bootnode
       executable: bin/bootnode
@@ -96,7 +96,7 @@ ethereum:
   genesis:
     eip7594_epoch: 0
     data_column_sidecar_subnet_count: 128
-    custody_requirement: 4
-    samples_per_slot: 16
+    custody_requirement: 16
+    sample_per_slot: 16
     premine:
       5E015fB7fdD3882dd62C5A7fDc41E02cAE6ce459: 1000000

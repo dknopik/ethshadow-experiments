@@ -69,14 +69,14 @@ ethereum:
     lighthouse:
       type: lighthouse
       extra_args: --subscribe-all-data-column-subnets
-      executable: bin/lighthouse
+      executable: bin/lighthouse_6268
     lighthouse_bootnode:
       type: lighthouse_bootnode
-      executable: bin/lighthouse
+      executable: bin/lighthouse_6268
       lcli_executable: bin/lcli
     lighthouse_vc:
       type: lighthouse_vc
-      executable: bin/lighthouse_vc
+      executable: bin/lighthouse_6268
     geth_bootnode:
       type: geth_bootnode
       executable: bin/bootnode
@@ -95,8 +95,8 @@ ethereum:
       start_time: 330s
   genesis:
     eip7594_epoch: 0
-    data_column_sidecar_subnet_count: 64
-    custody_requirement: 2
+    data_column_sidecar_subnet_count: 128
+    custody_requirement: 4
     sample_per_slot: 8
     premine:
       5E015fB7fdD3882dd62C5A7fDc41E02cAE6ce459: 1000000

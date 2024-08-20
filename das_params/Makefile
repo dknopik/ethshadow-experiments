@@ -1,12 +1,17 @@
 
 export PATH="$(PATH):$(HOME)/go/bin:$(HOME)/.local/bin:$(HOME)/.cargo/bin"
 
-all: bin/lighthouse bin/lcli bin/bootnode bin/shadow bin/reth bin/ethshadow bin/blobssss bin/prometheus
+all: bin/lighthouse bin/lighthouse_6268 bin/lcli bin/bootnode bin/shadow bin/reth bin/ethshadow bin/blobssss bin/prometheus
 
 bin/lighthouse: bin
 	git submodule update --init lighthouse 
 	cd lighthouse && RUSTFLAGS="-C target-cpu=native" cargo build --locked --bin lighthouse -F modern --profile maxperf
 	mv lighthouse/target/maxperf/lighthouse bin
+
+bin/lighthouse_6268: bin
+	git submodule update --init lighthouse_6268 
+	cd lighthouse_6268 && RUSTFLAGS="-C target-cpu=native" cargo build --locked --bin lighthouse -F modern --profile maxperf
+	mv lighthouse_6268/target/maxperf/lighthouse bin/lighthouse_6268
 
 bin/lcli: bin
 	git submodule update --init lighthouse

@@ -22,3 +22,7 @@
 	path = das_params/blobssss
 	url = https://github.com/dknopik/blobssss
 	branch = main
+[submodule "das_params/lighthouse_6268"]
+	path = das_params/lighthouse_6268
+	url = https://github.com/dknopik/lighthouse
+	branch = das-fetch-blobs-metrics

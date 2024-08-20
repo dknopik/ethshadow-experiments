@@ -1,8 +1,7 @@
 #!/bin/sh
 bin/ethshadow -d data.spec spec.yaml >> spec.outlog 2>>spec.errlog
-bin/ethshadow -d data.custody_2 custody_2.yaml >> custody_2.outlog 2>>custody_2.errlog
-bin/ethshadow -d data.custody_6 custody_6.yaml >> custody_6.outlog 2>>custody_6.errlog
-bin/ethshadow -d data.sample_12 sample_12.yaml >> sample_12.outlog 2>>sample_12.errlog
-bin/ethshadow -d data.sample_16 sample_16.yaml >> sample_16.outlog 2>>sample_16.errlog
-bin/ethshadow -d data.subnets_032 subnets_032.yaml >> subnets_032.outlog 2>>subnets_032.errlog
-bin/ethshadow -d data.subnets_064 subnets_064.yaml >> subnets_064.outlog 2>>subnets_064.errlog
+bin/ethshadow -d data.pr_6268 pr_6268.yaml >> pr_6268.outlog 2>>pr_6268.errlog
+bin/ethshadow -d data.custody_08 custody_08.yaml >> custody_08.outlog 2>>custody_08.errlog
+bin/ethshadow -d data.custody_16 custody_16.yaml >> custody_16.outlog 2>>custody_16.errlog
+bin/ethshadow -d data.subnets_32 subnets_32.yaml >> subnets_32.outlog 2>>subnets_32.errlog
+bin/ethshadow -d data.subnets_64 subnets_64.yaml >> subnets_64.outlog 2>>subnets_64.errlog
