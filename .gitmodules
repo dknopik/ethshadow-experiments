@@ -1,0 +1,24 @@
+[submodule "das_params/lighthouse"]
+	path = das_params/lighthouse
+	url = https://github.com/dknopik/lighthouse
+	branch = das-metrics
+[submodule "das_params/reth"]
+	path = das_params/reth
+	url = https://github.com/dknopik/reth
+	branch = shadow
+[submodule "das_params/shadow"]
+	path = das_params/shadow
+	url = https://github.com/dknopik/shadow
+	branch = ethereum
+[submodule "das_params/go-ethereum"]
+	path = das_params/go-ethereum
+	url = https://github.com/ethereum/go-ethereum
+	branch = master
+[submodule "das_params/ethereum-shadow"]
+	path = das_params/ethereum-shadow
+	url = https://github.com/dknopik/ethereum-shadow
+	branch = main
+[submodule "das_params/blobssss"]
+	path = das_params/blobssss
+	url = https://github.com/dknopik/blobssss
+	branch = main
