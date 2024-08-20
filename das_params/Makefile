@@ -1,26 +1,29 @@
 
-export PATH="$(PATH):$(HOME)/go/bin:$(HOME)/.local/bin:$(HOME)/.cargo/bin"
 
 all: bin/lighthouse bin/lighthouse_6268 bin/lcli bin/bootnode bin/shadow bin/reth bin/ethshadow bin/blobssss bin/prometheus
 
 bin/lighthouse: bin
 	git submodule update --init lighthouse 
 	cd lighthouse && RUSTFLAGS="-C target-cpu=native" cargo build --locked --bin lighthouse -F modern --profile maxperf
-	mv lighthouse/target/maxperf/lighthouse bin
+	rm -f bin/lighthouse
+	cp lighthouse/target/maxperf/lighthouse bin
 
 bin/lighthouse_6268: bin
 	git submodule update --init lighthouse_6268 
 	cd lighthouse_6268 && RUSTFLAGS="-C target-cpu=native" cargo build --locked --bin lighthouse -F modern --profile maxperf
+	rm -f bin/lighthouse_6268
 	mv lighthouse_6268/target/maxperf/lighthouse bin/lighthouse_6268
 
 bin/lcli: bin
 	git submodule update --init lighthouse
 	cd lighthouse && RUSTFLAGS="-C target-cpu=native" cargo build --locked --bin lcli --profile release
-	mv lighthouse/target/release/lcli bin
+	rm -f bin/lcli
+	cp lighthouse/target/release/lcli bin
 
 bin/bootnode: bin
 	git submodule update --init go-ethereum
 	cd go-ethereum && go run build/ci.go install ./cmd/bootnode
+	rm -f bin/bootnode
 	mv go-ethereum/build/bin/bootnode bin
 
 bin/shadow: bin 
@@ -33,16 +36,19 @@ bin/shadow: bin
 bin/reth: bin
 	git submodule update --init reth
 	cd reth && cargo build --bin reth --profile maxperf -F reth-db/disable-lock
-	mv reth/target/maxperf/bootnode bin
+	rm -f bin/reth
+	mv reth/target/maxperf/reth bin
 
 bin/ethshadow: bin
 	git submodule update --init ethereum-shadow
 	cd ethereum-shadow && cargo build --bin ethshadow
+	rm -f bin/ethshadow
 	mv ethereum-shadow/target/debug/ethshadow bin
 
 bin/blobssss: bin
 	git submodule update --init blobssss
 	cd blobssss && RUSTFLAGS="-C target-cpu=native" cargo build --bin blobssss --profile maxperf 
+	rm -f bin/blobssss
 	mv blobssss/target/maxperf/blobssss bin
 
 bin/prometheus: bin

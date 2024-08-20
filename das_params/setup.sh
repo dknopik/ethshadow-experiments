@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "this script is intended for server setups and will modify some system files"
 echo "you have 10 seconds to exit if you do not want this"
@@ -9,7 +9,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-t
 
 # install go
 cd /tmp && wget https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
-rm -rf $(HOME)/go && tar -C ~ -xzf /tmp/go1.23.0.linux-amd64.tar.gz
+rm -rf $HOME/go && tar -C ~ -xzf /tmp/go1.23.0.linux-amd64.tar.gz
 rm /tmp/go1.23.0.linux-amd64.tar.gz
 
 # set arcane properties
