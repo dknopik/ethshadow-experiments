@@ -4,6 +4,9 @@ echo "this script is intended for server setups and will modify some system file
 echo "you have 10 seconds to exit if you do not want this"
 sleep 10
 
+# install system stuff
+sudo apt install -y cmake findutils libclang-dev libc-dbg libglib2.0-0 libglib2.0-dev make netbase python3 python3-networkx xz-utils util-linux gcc g++ htop vim docker.io build-essential libssl-dev
+
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain stable --profile minimal -y
 
@@ -11,6 +14,11 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-t
 cd /tmp && wget https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
 rm -rf $HOME/go && tar -C ~ -xzf /tmp/go1.23.0.linux-amd64.tar.gz
 rm /tmp/go1.23.0.linux-amd64.tar.gz
+
+# bashrc
+echo "export PATH=$PATH:~/.local/bin:~/go/bin" >> ~/.bashrc
+echo "export GOPATH=~/gopath" >> ~/.bashrc
+echo "export TERM=xterm-256color" >> ~/.bashrc
 
 # set arcane properties
 echo "fs.nr_open = 10485760" | sudo tee -a /etc/sysctl.conf
