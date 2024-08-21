@@ -52,11 +52,16 @@ bin/blobssss: bin
 	mv blobssss/target/maxperf/blobssss bin
 
 bin/prometheus: bin
-	cd /tmp && wget https://github.com/prometheus/prometheus/releases/download/v2.53.2/prometheus-2.53.2.linux-amd64.tar.gz
-	tar -C /tmp -xzf /tmp/prometheus-2.53.2.linux-amd64.tar.gz
-	mv /tmp/prometheus-2.53.2.linux-amd64/prometheus bin
-	rm -rf /tmp/prometheus-2.53.2.linux-amd64
-	rm -f /tmp/prometheus-2.53.2.linux-amd64.tar.gz
+	git submodule update --init prometheus
+	cd prometheus && go build \
+	    -buildmode=pie \
+	    -mod=readonly \
+	    -modcacherw \
+	    -ldflags "-compressdwarf=false -linkmode external -extld-flags '-Wl,-O1 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,-z,pack-relative-relocs'" \
+	    ./cmd/prometheus
+	rm -f bin/prometheus
+	mv prometheus/prometheus bin
+
 
 bin:
 	mkdir bin

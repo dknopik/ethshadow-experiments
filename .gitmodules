@@ -26,3 +26,7 @@
 	path = das_params/lighthouse_6268
 	url = https://github.com/dknopik/lighthouse
 	branch = das-fetch-blobs-metrics
+[submodule "das_params/prometheus"]
+	path = das_params/prometheus
+	url = https://github.com/prometheus/prometheus
+	branch = main

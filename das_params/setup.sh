@@ -6,6 +6,7 @@ sleep 10
 
 # install system stuff
 sudo apt install -y cmake findutils libclang-dev libc-dbg libglib2.0-0 libglib2.0-dev make netbase python3 python3-networkx xz-utils util-linux gcc g++ htop vim docker.io build-essential libssl-dev
+sudo gpasswd -a $USER docker
 
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain stable --profile minimal -y
