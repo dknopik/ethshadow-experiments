@@ -1,6 +1,6 @@
 general:
   model_unblocked_syscall_latency: true
-  stop_time: 1h
+  stop_time: 45m
   progress: true
   heartbeat_interval: 1m
   
@@ -99,4 +99,4 @@ ethereum:
     custody_requirement: 2
     sample_per_slot: 8
     premine:
-      5E015fB7fdD3882dd62C5A7fDc41E02cAE6ce459: 1000000
+      5E015fB7fdD3882dd62C5A7fDc41E02cAE6ce459: 1000000ETH

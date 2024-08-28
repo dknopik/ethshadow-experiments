@@ -1,11 +1,11 @@
 #!/bin/bash
 
 echo "this script is intended for server setups and will modify some system files"
-echo "you have 10 seconds to exit if you do not want this"
-sleep 10
+echo "you have 5 seconds to exit if you do not want this"
+sleep 5
 
 # install system stuff
-sudo apt install -y cmake findutils libclang-dev libc-dbg libglib2.0-0 libglib2.0-dev make netbase python3 python3-networkx xz-utils util-linux gcc g++ htop vim docker.io build-essential libssl-dev
+sudo apt install -y cmake findutils libclang-dev libc-dbg libglib2.0-0 libglib2.0-dev make netbase python3 python3-networkx xz-utils util-linux gcc g++ htop vim docker.io build-essential libssl-dev zstd
 sudo gpasswd -a $USER docker
 
 # install rust
