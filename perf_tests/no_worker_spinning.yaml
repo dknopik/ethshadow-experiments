@@ -1,0 +1,112 @@
+general:
+  model_unblocked_syscall_latency: true
+  stop_time: 45m
+  progress: true
+  heartbeat_interval: 1m
+  
+experimental:
+  runahead: 20ms
+  use_memory_manager: true
+  host_heartbeat_interval: 1m
+  use_worker_spinning: false
+
+ethereum:
+  validators: 1000
+  nodes:
+    - location: europe
+      reliability: reliable
+      tag: boot
+      clients:
+        el: geth_bootnode
+        cl: lighthouse_bootnode
+    - location: europe
+      reliabilities:
+        - reliable
+        - home
+        - laggy
+        - constrained
+      count:
+        total: 80
+    - locations: 
+        - na_east
+        - na_west
+      reliabilities:
+        - reliable
+        - home
+        - laggy
+        - constrained
+      count:
+        total: 120
+    - locations:
+        - east_asia
+      reliabilities:
+        - reliable
+        - home
+        - laggy
+        - constrained
+      count:
+        total: 20
+    - locations:
+        - australia
+        - west_asia
+      reliabilities:
+        - reliable
+        - home
+        - laggy
+        - constrained
+      count:
+        total: 24
+    - locations:
+        - south_africa
+        - south_america
+      reliabilities:
+        - reliable
+        - home
+        - laggy
+        - constrained
+      count:
+        total: 8
+    - location: europe
+      reliability: reliable
+      tag: monitoring
+      clients:
+        monitoring: prometheus
+    - location: europe
+      reliability: reliable
+      tag: spammer
+      clients:
+        spamming: spammer
+  clients:
+    lighthouse:
+      type: lighthouse
+      executable: ../das_params/bin/lighthouse
+    lighthouse_bootnode:
+      type: lighthouse_bootnode
+      executable: ../das_params/bin/lighthouse
+      lcli_executable: ../das_params/bin/lcli
+    lighthouse_vc:
+      type: lighthouse_vc
+      executable: ../das_params/bin/lighthouse
+    geth_bootnode:
+      type: geth_bootnode
+      executable: ../das_params/bin/bootnode
+    reth:
+      type: reth
+      executable: ../das_params/bin/reth
+    prometheus:
+      type: prometheus
+      executable: ../das_params/bin/prometheus
+    spammer:
+      type: simple_blob_spammer
+      executable: ../das_params/bin/blobssss
+      private_key: "087e1e65a8127930dc08bc7cfcf2dd19400112910e40247dfe71a1d82365958d"
+      min_per_slot: 1
+      max_per_slot: 6
+      start_time: 330s
+  genesis:
+    eip7594_epoch: 0
+    data_column_sidecar_subnet_count: 128
+    custody_requirement: 4
+    sample_per_slot: 8
+    premine:
+      5E015fB7fdD3882dd62C5A7fDc41E02cAE6ce459: 1000000ETH
