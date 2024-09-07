@@ -16,6 +16,9 @@ cd /tmp && wget https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
 rm -rf $HOME/go && tar -C ~ -xzf /tmp/go1.23.0.linux-amd64.tar.gz
 rm /tmp/go1.23.0.linux-amd64.tar.gz
 
+# get submodules
+git submodule update --init *
+
 # bashrc
 echo "export PATH=$PATH:~/.local/bin:~/go/bin" >> ~/.bashrc
 echo "export GOPATH=~/gopath" >> ~/.bashrc
