@@ -68,7 +68,6 @@ ethereum:
   clients:
     lighthouse:
       type: lighthouse
-      extra_args: --subscribe-all-data-column-subnets
       executable: bin/lighthouse_6268
     lighthouse_bootnode:
       type: lighthouse_bootnode
