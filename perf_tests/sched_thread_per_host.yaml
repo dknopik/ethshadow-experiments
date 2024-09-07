@@ -79,26 +79,26 @@ ethereum:
   clients:
     lighthouse:
       type: lighthouse
-      executable: ../das_params/bin/lighthouse
+      executable: bin/lighthouse
     lighthouse_bootnode:
       type: lighthouse_bootnode
-      executable: ../das_params/bin/lighthouse
-      lcli_executable: ../das_params/bin/lcli
+      executable: bin/lighthouse
+      lcli_executable: bin/lcli
     lighthouse_vc:
       type: lighthouse_vc
-      executable: ../das_params/bin/lighthouse
+      executable: bin/lighthouse
     geth_bootnode:
       type: geth_bootnode
-      executable: ../das_params/bin/bootnode
+      executable: bin/bootnode
     reth:
       type: reth
-      executable: ../das_params/bin/reth
+      executable: bin/reth
     prometheus:
       type: prometheus
-      executable: ../das_params/bin/prometheus
+      executable: bin/prometheus
     spammer:
       type: simple_blob_spammer
-      executable: ../das_params/bin/blobssss
+      executable: bin/blobssss
       private_key: "087e1e65a8127930dc08bc7cfcf2dd19400112910e40247dfe71a1d82365958d"
       min_per_slot: 1
       max_per_slot: 6

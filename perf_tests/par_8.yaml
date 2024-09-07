@@ -3,12 +3,12 @@ general:
   stop_time: 45m
   progress: true
   heartbeat_interval: 1m
+  parallelism: 8
   
 experimental:
   runahead: 20ms
   use_memory_manager: true
   host_heartbeat_interval: 1m
-  use_worker_spinning: false
 
 ethereum:
   validators: 1000
