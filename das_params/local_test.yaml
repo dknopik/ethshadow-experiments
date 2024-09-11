@@ -57,7 +57,7 @@ ethereum:
       lcli_executable: bin/lcli
     lighthouse_vc:
       type: lighthouse_vc
-      executable: bin/lighthouse_vc
+      executable: bin/lighthouse
     geth_bootnode:
       type: geth_bootnode
       executable: bin/bootnode
