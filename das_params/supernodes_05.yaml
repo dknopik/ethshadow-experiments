@@ -65,17 +65,34 @@ ethereum:
       tag: spammer
       clients:
         spamming: spammer
+    - locations:
+        - europe
+        - na_east
+        - na_west
+        - east_asia
+        - australia
+      reliability: reliable
+      tag: super
+      count:
+        per_combination: 1
+      clients:
+        el: reth
+        cl: lighthouse_supernode
   clients:
     lighthouse:
       type: lighthouse
-      executable: bin/lighthouse_4_of_6
+      executable: bin/lighthouse
+    lighthouse_supernode:
+      type: lighthouse
+      executable: bin/lighthouse
+      extra_args: --subscribe-all-data-column-subnets
     lighthouse_bootnode:
       type: lighthouse_bootnode
-      executable: bin/lighthouse_4_of_6
+      executable: bin/lighthouse
       lcli_executable: bin/lcli
     lighthouse_vc:
       type: lighthouse_vc
-      executable: bin/lighthouse_4_of_6
+      executable: bin/lighthouse
     geth_bootnode:
       type: geth_bootnode
       executable: bin/bootnode
@@ -95,7 +112,7 @@ ethereum:
   genesis:
     eip7594_epoch: 0
     data_column_sidecar_subnet_count: 128
-    custody_requirement: 6
+    custody_requirement: 4
     sample_per_slot: 8
     premine:
       5E015fB7fdD3882dd62C5A7fDc41E02cAE6ce459: 1000000ETH

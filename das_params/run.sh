@@ -12,4 +12,7 @@ run "custody_08"
 run "custody_16"
 run "subnets_32"
 run "subnets_64"
-
+run "4_of_6"
+run "supernodes_05"
+run "supernodes_10"
+run "supernodes_25"
