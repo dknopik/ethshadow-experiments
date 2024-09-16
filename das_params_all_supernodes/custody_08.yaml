@@ -1,0 +1,102 @@
+general:
+  model_unblocked_syscall_latency: true
+  stop_time: 45m
+  progress: true
+  heartbeat_interval: 1m
+  
+experimental:
+  runahead: 20ms
+  use_memory_manager: true
+  host_heartbeat_interval: 1m
+
+ethereum:
+  validators: 4000
+  nodes:
+    - location: europe
+      reliability: reliable
+      tag: boot
+      clients:
+        el: geth_bootnode
+        cl: lighthouse_bootnode
+    - location: europe
+      reliabilities:
+        - reliable
+        - home
+      count:
+        total: 360
+    - locations: 
+        - na_east
+        - na_west
+      reliabilities:
+        - reliable
+        - home
+      count:
+        total: 440
+    - locations:
+        - east_asia
+      reliabilities:
+        - reliable
+        - home
+      count:
+        total: 80
+    - locations:
+        - australia
+        - west_asia
+      reliabilities:
+        - reliable
+        - home
+      count:
+        total: 100
+    - locations:
+        - south_africa
+        - south_america
+      reliabilities:
+        - reliable
+        - home
+      count:
+        total: 20
+    - location: europe
+      reliability: reliable
+      tag: monitoring
+      clients:
+        monitoring: prometheus
+    - location: europe
+      reliability: reliable
+      tag: spammer
+      clients:
+        spamming: spammer
+  clients:
+    lighthouse:
+      type: lighthouse
+      extra_args: --subscribe-all-data-column-subnets
+      executable: bin/lighthouse
+    lighthouse_bootnode:
+      type: lighthouse_bootnode
+      executable: bin/lighthouse
+      lcli_executable: bin/lcli
+    lighthouse_vc:
+      type: lighthouse_vc
+      executable: bin/lighthouse
+    geth_bootnode:
+      type: geth_bootnode
+      executable: bin/bootnode
+    reth:
+      type: reth
+      executable: bin/reth
+    prometheus:
+      type: prometheus
+      executable: bin/prometheus
+    spammer:
+      type: simple_blob_spammer
+      executable: bin/blobssss
+      private_key: "087e1e65a8127930dc08bc7cfcf2dd19400112910e40247dfe71a1d82365958d"
+      min_per_slot: 1
+      max_per_slot: 6
+      start_time: 330s
+  genesis:
+    eip7594_epoch: 0
+    data_column_sidecar_subnet_count: 128
+    custody_requirement: 8
+    sample_per_slot: 8
+    premine:
+      5E015fB7fdD3882dd62C5A7fDc41E02cAE6ce459: 1000000ETH

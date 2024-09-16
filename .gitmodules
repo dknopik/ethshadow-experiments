@@ -30,3 +30,27 @@
 	path = das_params/prometheus
 	url = https://github.com/prometheus/prometheus
 	branch = main
+[submodule "das_params_all_supernodes/blobssss"]
+	path = das_params_all_supernodes/blobssss
+	url = https://github.com/dknopik/blobssss
+[submodule "das_params_all_supernodes/ethereum-shadow"]
+	path = das_params_all_supernodes/ethereum-shadow
+	url = https://github.com/dknopik/ethereum-shadow
+[submodule "das_params_all_supernodes/go-ethereum"]
+	path = das_params_all_supernodes/go-ethereum
+	url = https://github.com/ethereum/go-ethereum
+[submodule "das_params_all_supernodes/lighthouse"]
+	path = das_params_all_supernodes/lighthouse
+	url = https://github.com/dknopik/lighthouse
+[submodule "das_params_all_supernodes/lighthouse_6268"]
+	path = das_params_all_supernodes/lighthouse_6268
+	url = https://github.com/dknopik/lighthouse
+[submodule "das_params_all_supernodes/prometheus"]
+	path = das_params_all_supernodes/prometheus
+	url = https://github.com/prometheus/prometheus
+[submodule "das_params_all_supernodes/reth"]
+	path = das_params_all_supernodes/reth
+	url = https://github.com/dknopik/reth
+[submodule "das_params_all_supernodes/shadow"]
+	path = das_params_all_supernodes/shadow
+	url = https://github.com/dknopik/shadow
