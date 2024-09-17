@@ -60,3 +60,6 @@
 [submodule "das_params/lighthouse_always_maintain"]
 	path = das_params/lighthouse_always_maintain
 	url = https://github.com/dknopik/lighthouse
+[submodule "das_params/lighthouse_maintain_before"]
+	path = das_params/lighthouse_maintain_before
+	url = https://github.com/dknopik/lighthouse
