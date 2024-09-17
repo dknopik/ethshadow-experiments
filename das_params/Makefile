@@ -2,20 +2,15 @@
 
 all: bin/lighthouse bin/lighthouse_6268 bin/lcli bin/bootnode bin/shadow bin/reth bin/ethshadow bin/blobssss bin/prometheus
 
-bin/lighthouse: bin
-	cd lighthouse && RUSTFLAGS="-C target-cpu=native" cargo build --locked --bin lighthouse -F modern --profile maxperf
-	rm -f bin/lighthouse
-	cp lighthouse/target/maxperf/lighthouse bin
+bin/lighthouse: lighthouse bin
+	cd $< && RUSTFLAGS="-C target-cpu=native" cargo build --locked --bin lighthouse -F modern --profile maxperf
+	rm -f $@
+	cp $</target/maxperf/lighthouse $@
 
-bin/lighthouse_4_of_6: bin
-	cd lighthouse_4_of_6 && RUSTFLAGS="-C target-cpu=native" cargo build --locked --bin lighthouse -F modern --profile maxperf
-	rm -f bin/lighthouse_4_of_6
-	cp lighthouse_4_of_6/target/maxperf/lighthouse bin/lighthouse_4_of_6
-
-bin/lighthouse_6268: bin
-	cd lighthouse_6268 && RUSTFLAGS="-C target-cpu=native" cargo build --locked --bin lighthouse -F modern --profile maxperf
-	rm -f bin/lighthouse_6268
-	cp lighthouse_6268/target/maxperf/lighthouse bin/lighthouse_6268
+bin/lighthouse%: lighthouse% bin
+	cd $< && RUSTFLAGS="-C target-cpu=native" cargo build --locked --bin lighthouse -F modern --profile maxperf
+	rm -f $@
+	cp $</target/maxperf/lighthouse $@
 
 bin/lcli: bin
 	cd lighthouse && RUSTFLAGS="-C target-cpu=native" cargo build --locked --bin lcli --profile release
