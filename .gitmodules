@@ -63,3 +63,30 @@
 [submodule "das_params/lighthouse_maintain_before"]
 	path = das_params/lighthouse_maintain_before
 	url = https://github.com/dknopik/lighthouse
+[submodule "idontwant/blobssss"]
+	path = idontwant/blobssss
+	url = https://github.com/dknopik/blobssss
+[submodule "idontwant/ethereum-shadow"]
+	path = idontwant/ethereum-shadow
+	url = https://github.com/dknopik/ethereum-shadow
+[submodule "idontwant/go-ethereum"]
+	path = idontwant/go-ethereum
+	url = https://github.com/ethereum/go-ethereum
+[submodule "idontwant/lighthouse"]
+	path = idontwant/lighthouse
+	url = https://github.com/dknopik/lighthouse
+[submodule "idontwant/prometheus"]
+	path = idontwant/prometheus
+	url = https://github.com/prometheus/prometheus
+[submodule "idontwant/reth"]
+	path = idontwant/reth
+	url = https://github.com/dknopik/reth
+[submodule "idontwant/shadow"]
+	path = idontwant/shadow
+	url = https://github.com/dknopik/shadow
+[submodule "idontwant/lighthouse_high"]
+	path = idontwant/lighthouse_high
+	url = https://github.com/dknopik/lighthouse
+[submodule "idontwant/reth_high"]
+	path = idontwant/reth_high
+	url = https://github.com/dknopik/reth
