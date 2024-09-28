@@ -10,7 +10,7 @@ experimental:
   host_heartbeat_interval: 1m
 
 ethereum:
-  validators: 150000
+  validators: 4000
   nodes:
     - location: europe
       reliability: reliable
