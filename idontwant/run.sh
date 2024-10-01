@@ -8,7 +8,7 @@ run() {
 
 run "high_blob_current_gossipsub"
 run "high_blob_full_gossipsub"
-run "high_blob_no_gossipsub"
+#run "high_blob_no_gossipsub"
 run "low_blob_current_gossipsub"
 run "low_blob_full_gossipsub"
-run "low_blob_no_gossipsub"
+#run "low_blob_no_gossipsub"

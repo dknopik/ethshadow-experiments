@@ -5,7 +5,7 @@ general:
   heartbeat_interval: 1m
   
 experimental:
-  runahead: 20ms
+  runahead: 2ms
   use_memory_manager: true
   host_heartbeat_interval: 1m
 
